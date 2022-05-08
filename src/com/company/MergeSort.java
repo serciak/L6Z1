@@ -15,6 +15,8 @@ public class MergeSort {
     }
 
     public ArrayList<Integer> sort(ArrayList<Integer> list) {
+        swaps = 0;
+        comparisons = 0;
         return mergesort(list, 0, list.size() - 1);
     }
 

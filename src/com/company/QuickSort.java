@@ -23,6 +23,8 @@ public class QuickSort {
     }
 
     public ArrayList<Integer> sort(ArrayList<Integer> list) {
+        swaps = 0;
+        comparisons = 0;
         quicksort(list, 0, list.size() - 1);
         return list;
     }
@@ -40,9 +42,21 @@ public class QuickSort {
         int i = left-1;
 
         while (left <= right){
-            if(comparator.compare(list.get(left), value) <= 0)
-                swap(list, ++i,left);
-            ++left;}
+            comparisons++;
+            if(comparator.compare(list.get(left), value) <= 0) {
+                swaps++;
+                swap(list, ++i, left);
+            }
+            left++;
+        }
         return i<right ? i :i-1;
+    }
+
+    public int getComparisons() {
+        return comparisons;
+    }
+
+    public int getSwaps() {
+        return swaps;
     }
 }
