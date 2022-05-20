@@ -45,8 +45,6 @@ public class SortEvaluator {
         return arrayList;
     }
 
-
-
     private void randomOrder() {
         ArrayList<Integer> list = randomArray();
 
